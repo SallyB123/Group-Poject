@@ -1,0 +1,12 @@
+.salmon {background-color: #fca17d;}
+
+body {background-color: #f9dbbd;}
+
+.contact {color: #fca17d;
+margin: 100%;}
+
+footer {position: relative;
+    bottom: -800;
+    width: 100%;
+    height: 100px;
+    background: #bbcbcb;}
