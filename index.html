@@ -1,31 +1,130 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="indexstyle.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
 <body>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light salmon">
-  <a class="navbar-brand" href="#">Swaps Site</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="foodswaps.html">Food Swaps</a>
-      <a class="nav-item nav-link" href="#">Shops Swaps</a>
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Your Swaps</a>
-    </div>
+  <script>
+  function initComparisons() {
+  var x, i;
+  /* Find all elements with an "overlay" class: */
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /* Once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function: */
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /* Get the width and height of the img element */
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /* Set the width of the img element to 50%: */
+    img.style.width = (w / 2) + "px";
+    /* Create slider: */
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /* Insert slider */
+    img.parentElement.insertBefore(slider, img);
+    /* Position the slider in the middle: */
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /* Execute a function when the mouse button is pressed: */
+    slider.addEventListener("mousedown", slideReady);
+    /* And another function when the mouse button is released: */
+    window.addEventListener("mouseup", slideFinish);
+    /* Or touched (for touch screens: */
+    slider.addEventListener("touchstart", slideReady);
+     /* And released (for touch screens: */
+    window.addEventListener("touchstop", slideFinish);
+    function slideReady(e) {
+      /* Prevent any other actions that may occur when moving over the image: */
+      e.preventDefault();
+      /* The slider is now clicked and ready to move: */
+      clicked = 1;
+      /* Execute a function when the slider is moved: */
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /* The slider is no longer clicked: */
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /* If the slider is no longer clicked, exit this function: */
+      if (clicked == 0) return false;
+      /* Get the cursor's x position: */
+      pos = getCursorPos(e)
+      /* Prevent the slider from being positioned outside the image: */
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /* Execute a function that will resize the overlay image according to the cursor: */
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = e || window.event;
+      /* Get the x positions of the image: */
+      a = img.getBoundingClientRect();
+      /* Calculate the cursor's x coordinate, relative to the image: */
+      x = e.pageX - a.left;
+      /* Consider any page scrolling: */
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /* Resize the image: */
+      img.style.width = x + "px";
+      /* Position the slider: */
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+}
+</script>
+  <header>
+    Sustainable Swaps
+    <img class="logo-image" src="Images\logo.png" alt="logo">
+  </header>
+  <!--Navigation-->
+  <section>
+    <div class="topnav">
+    <a class="active"href="index.html">Home</a>
+    <a href="foodswaps.html">Food Swaps</a>
+    <a href="shopswaps.html">Shop Swaps </a>
+    <a href="form.html">Your Swaps</a>
   </div>
-</nav>
+    <section>
+  <!-- Main Page-->
+  <!--Intro to Site-->
+  <article>
+<h1>Welcome to Sustainable Swaps! We're here to help <b> you </b> make sustainable living choices.</h1>
+<h2>Why? Have a play with the photo below to see what is happening to <u>our planet</U> because of our unsustainable lifestyles...</h2>
+</article>
 
-<footer>
-  Social Media Links Go Here (with lil images please)
+<!--Interactive Image-->
+<div class="funpic">
+<div class="img-comp-container">
+  <div class="img-comp-img">
+    <img src="Images\forest1.jpg" width="500" height="400">
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src="Images\forests2.jpg" width="500" height="400">
+  </div>
+</div>
+</div>
+<script>
+initComparisons();
+</script>
+  <!--Footer-->
+  <footer>
+    <p1> Contact Us </p1>
+    <a href="https://facebook.com" target="_blank" class="fa fa-facebook"></a>
+    <a href="https://twitter.com" target="_blank"class="fa fa-twitter"></a>
+    <a href="https://linkedin.com" target="_blank"class="fa fa-linkedin"></a>
   </footer>
   </body>
-
-
-</html>
+  </html>

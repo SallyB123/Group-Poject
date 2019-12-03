@@ -1,3 +1,15 @@
+/*Fonts*/
+h1 {
+  font-size: 22px;
+font-style: normal;
+font-family: sans-serif;
+text-align: center;}
+
+h2 {
+  font-size: 15px;
+  text-align: center;
+
+}
 
 /* Header */
 header {
@@ -52,71 +64,7 @@ article {
   color: white;
 }
 
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 100px;
-  height: auto;
-}
 
-img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  display:flex;
-  justify-content:flex-start;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #b8dbd9;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: 3.50s ease;
-}
-
-.container:hover .overlay {
-  height: 100%;
-}
-
-.text {
-  white-space:pre-wrap;
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-.row {
-  display: flex;
-}
-
-.column {
-  flex: 33.33%;
-  padding: 5px;
-}
-.responsive {
-  width: 300%;
-  max-width: 1000px;
-  height: auto;
-}
 /* Style the footer */
 footer {
   background-color: #f4f4f9;
@@ -125,6 +73,42 @@ footer {
   color: black;
 }
 
+/*Interactive Photo*/
+* {box-sizing: border-box;}
+
+.img-comp-container {
+  position: relative;
+  height: 400px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #f4f4f9;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+.funpic{
+  display: flex;
+  justify-content:space-around;
+  padding-right: 400px;
+  background-color: #f4f4f9;
+}
 /*Social Media */
 .fa {
   padding: 20px;

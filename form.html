@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> SwapsSite </title>
+  <link rel="stylesheet" href="formstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+  </head>
+
+<body>
+  <header>
+    Sustainable Swaps
+    <img class="logo-image" src="Images\logo.png" alt="logo">
+  </header>
+<div>
+  <section>
+    <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="foodswaps.html">Food Swaps</a>
+    <a href="shopswaps.html">Shop Swaps </a>
+    <a class="active" href="form.html">Your Swaps</a>
+  </div>
+</section>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="container">
+  <form action="/action_page.php">
+
+<div class="totalform">
+<h3>
+    <label for="fname">Submit Your Swap</label>
+</h3>
+
+    <p>Now is your turn! If you have come across a swap that has helped you live more sustainably and you'd like us to feature it, just fill in the form below. If your swap gets chosen you will be notified by email.</p>
+
+<div>
+</div>
+
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name...">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email...">
+
+    <label for="swap">Type of Swap</label>
+    <select id="swap" name="type">
+      <option value="food">Food Swap</option>
+      <option value="shop">Shop Swap</option>
+    </select>
+
+    <label for="subject">Message</label>
+    <textarea id="subject" name="subject" placeholder="Tell us why this is a great swap!" style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+
+
+<footer>
+  <p1> Contact Us </p1>
+  <a href="https://facebook.com" target="_blank" class="fa fa-facebook"></a>
+  <a href="https://twitter.com" target="_blank"class="fa fa-twitter"></a>
+  <a href="https://linkedin.com" target="_blank"class="fa fa-linkedin"></a>
+</footer>
+  </body>
+
+
+</html>

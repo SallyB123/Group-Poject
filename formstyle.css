@@ -1,0 +1,125 @@
+
+/* Header */
+header {
+  background-color: #32746d;
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+
+.logo-image{
+  width: 50px;
+  border-radius: 30%;
+  border: none;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+    }
+
+.totalform {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+input[type=subject] {
+  padding: 9px;
+    }
+
+input[type=submit] {
+  background-color: #32746d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+    }
+
+input[type=submit]:hover {
+  background-color: #b8dbd9;
+    }
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 25px;
+    }
+
+    /* Navigation menu */
+    /* Add a black background color to the top navigation */
+    .topnav {
+      background-color: #b8dbd9;
+      overflow: hidden;
+    }
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: white;
+      color: #32746d;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #32746d;
+      color: white;
+    }
+
+
+    /* Style the footer */
+    footer {
+      background-color: #f4f4f9;
+      padding: 10px;
+      text-align: center;
+      color: black;
+    }
+
+    /*Social Media */
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+    .fa:hover {
+        opacity: 0.7;
+    }
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+    .fa-linkedin {
+      background: #007bb5;
+      color: white;
+    }
